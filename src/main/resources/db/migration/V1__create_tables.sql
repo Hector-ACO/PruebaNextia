@@ -1,0 +1,15 @@
+CREATE TABLE "users" (
+	"id" SERIAL,
+	"email" VARCHAR(50) NULL DEFAULT NULL,
+	"password" VARCHAR(150) NULL DEFAULT NULL,
+	"user_name" VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY ("id")
+)
+;
+
+CREATE TABLE "documents" (
+	"id" SERIAL,
+	"path" VARCHAR(100) NULL DEFAULT NULL,
+	PRIMARY KEY ("id")
+)
+;
