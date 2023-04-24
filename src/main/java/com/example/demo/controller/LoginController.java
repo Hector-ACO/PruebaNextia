@@ -5,7 +5,6 @@ import com.example.demo.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
@@ -31,7 +30,7 @@ public class LoginController {
         Optional<User> verify = userRepository.findByUserName(userName);
         if (verify.isPresent()) {
             User user = verify.get();
-            if (true){//BCrypt.verifyer().verify(password.toCharArray(), user.getPassword()).verified) {
+            if (password.equals(user.getPassword())) {
                 user.setToken(getToken(user));
                 return ResponseEntity.ok(user);
             }

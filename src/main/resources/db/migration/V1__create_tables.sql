@@ -9,6 +9,7 @@ CREATE TABLE "users" (
 
 CREATE TABLE "documents" (
 	"id" SERIAL,
+	"name" VARCHAR(100) NULL DEFAULT NULL,
 	"path" VARCHAR(100) NULL DEFAULT NULL,
 	PRIMARY KEY ("id")
 )

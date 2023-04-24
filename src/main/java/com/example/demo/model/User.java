@@ -20,16 +20,6 @@ public class User  extends BaseModel {
     @NotEmpty(message = "La contraseña se encuentra vacia")
     private String password;
 
-    /*public void encryptPassword() {
-        if(!isEncrypted()) {
-            char[] newPasswordHashed = BCrypt.with(BCrypt.Version.VERSION_2A).hashToChar(10, this.password.toCharArray());
-            this.password = new String(newPasswordHashed);
-        }
-    }
-    private boolean isEncrypted(){
-        return this.password.startsWith("$2a$10$");
-    }*/
-
     @Email
     private String email;
 

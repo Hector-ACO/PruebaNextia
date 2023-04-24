@@ -7,6 +7,8 @@ import lombok.Data;
 @Data
 public class Documents extends BaseModel {
 
+    private String name;
+
     private String path;
 
 }

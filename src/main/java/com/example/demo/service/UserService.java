@@ -17,4 +17,19 @@ public class UserService {
         return userRepository.findByUserName(userName);
     }
 
+    public Optional<User> findById(Long id){
+        return userRepository.findById(id);
+    }
+
+    public User update(User entity){
+        Optional<User> verify = findById(entity.getId());
+        if(verify.isPresent()){
+            User user = verify.get();
+            user.setUserName(entity.getUserName());
+            user.setEmail(entity.getEmail());
+            return userRepository.save(user);
+        }
+        throw new RuntimeException("No se encontro el usuario con id " + entity.getId() );
+    }
+
 }
